@@ -1,2 +1,2 @@
 # interactive-portfolio
-Openclassrooms project 3
+Openclassrooms project three
