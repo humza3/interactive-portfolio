@@ -18,11 +18,11 @@ section {
   grid-template-areas: "c a" "d b" "e b" "f b";
 }
 
-header nav {
+.title {
   margin: 40px auto;
 }
 
-header nav h1 {
+.title h1 {
   font-size: 40px;
   text-align: center-right;
   margin: 0 auto;
@@ -35,11 +35,35 @@ header nav h1 {
   margin: 0 auto;
 }
 
-header nav h2 {
+header .title h2 {
   font-size: 20px;
   text-align: center-right;
   margin: 0 auto;
   text-decoration: underline solid #C0B283;
+}
+
+header nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+header nav li {
+  float: left;
+}
+
+header nav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+header nav li a:hover {
+  background-color: #111;
 }
 
 ul li {
@@ -237,6 +261,42 @@ footer a {
   color: #C0B283;
 }
 
+.contact {
+  width: 100%;
+}
+
+#name {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+#email {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+#phone {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+#message {
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+}
+
 @media all and (max-width: 768px) {
   body {
     width: 100%;
@@ -281,11 +341,11 @@ footer a {
     padding: 10px 5px;
   }
 
-  header nav {
+  header .title {
     margin: 40px auto;
   }
 
-  header nav h1 {
+  header .title h1 {
     text-align: left;
   }
 
@@ -293,7 +353,7 @@ footer a {
     text-align: left;
   }
 
-  header nav h2 {
+  header .title h2 {
     text-align: left;
   }
 
