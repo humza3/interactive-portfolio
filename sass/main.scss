@@ -70,7 +70,17 @@ header nav li a:hover {
   background-color: #111;
 }
 /////////////////////////////////////////Navigation
-
+////////////////////////////////////////MAIN GRID
+section{
+	display: grid;
+	grid-template-columns: 30% 70%;
+	grid-template-areas: 
+	"c a"
+	"d b"
+	"e b"
+	"f b"
+	;
+}
 
 ul li {	
 list-style-type: none;
@@ -85,6 +95,12 @@ list-style-type: none;
 #a {
 	grid-area:a;
 	
+}
+#portb {
+ grid-area: b;
+}
+#contb {
+ grid-area: b;
 }
 #b {
 	grid-area:b;
@@ -152,8 +168,9 @@ list-style-type: none;
 #c, #d, #e, #f {
 	background-color: #dcd0c0;
 }
-
-article{
+/////////////////////////////////MAIN GRID
+////////////////////////////////ABOUT
+#b{
 	display: grid;
 	grid-template-columns: 20% 20% 20% 20% 20%;
 	grid-template-areas: 
@@ -223,6 +240,65 @@ article{
 #x {
 	grid-area:x;
 }
+///////////////////////////ABOUT
+//////////////////////////////PORTFOLIO
+
+#portb {
+	display: grid;
+	grid-template-columns: 33.333% 33.333% 33.333%;
+	grid-template-areas: 
+	"portg porth porti"
+	"portj portk portl"
+	"portm portn porto"
+	;
+}	
+#portg {
+	grid-area:portg;
+}
+#porth {
+	grid-area:porth;
+}
+#porti {
+	grid-area:porti;
+}
+#portj {
+	grid-area:portj;
+}
+#portk {
+	grid-area:portk;
+}
+#portl {
+	grid-area:portl;
+}
+#portm {
+	grid-area:portm;
+}
+#portn {
+	grid-area:portn;
+}
+#porto {
+	grid-area:porto;
+}
+.imgcontent {
+	margin: 10px;
+}
+
+.tile img {
+	width: 200px;
+
+}
+///////////////////////////////////CONTACT
+#contb{
+	padding: 20px;
+}
+
+
+
+
+///////////////////////////////////CONTACT
+
+
+/////////////////////////ASIDE
 .aside-title {
 	background-color: #373737;
 	font-size:20px;
@@ -234,6 +310,7 @@ article{
 	height: 30px;
 	margin: 10px auto;
 }
+///////////////////////////FOOTER
 footer{
 	background-color: #373737;
 	margin:0;
@@ -247,6 +324,7 @@ footer p{
 footer a {
 	color: #C0B283;
 }
+//////////////////////////////////FOOTER
 ///////////////////////CONTACT FORM
 .contact {
 	width: 100%;

@@ -66,6 +66,12 @@ header nav li a:hover {
   background-color: #111;
 }
 
+section {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-template-areas: "c a" "d b" "e b" "f b";
+}
+
 ul li {
   list-style-type: none;
 }
@@ -80,6 +86,14 @@ ul li {
 
 #a {
   grid-area: a;
+}
+
+#portb {
+  grid-area: b;
+}
+
+#contb {
+  grid-area: b;
 }
 
 #b {
@@ -155,7 +169,7 @@ ul li {
   background-color: #dcd0c0;
 }
 
-article {
+#b {
   display: grid;
   grid-template-columns: 20% 20% 20% 20% 20%;
   grid-template-areas: "g h h h h" "i j j j j" "k l l l l" "m n n n n" "o p p p p" "q r r r r" "s t t t t" "u v v v v" ". w w x x";
@@ -231,6 +245,60 @@ article {
 
 #x {
   grid-area: x;
+}
+
+#portb {
+  display: grid;
+  grid-template-columns: 33.333% 33.333% 33.333%;
+  grid-template-areas: "portg porth porti" "portj portk portl" "portm portn porto";
+}
+
+#portg {
+  grid-area: portg;
+}
+
+#porth {
+  grid-area: porth;
+}
+
+#porti {
+  grid-area: porti;
+}
+
+#portj {
+  grid-area: portj;
+}
+
+#portk {
+  grid-area: portk;
+}
+
+#portl {
+  grid-area: portl;
+}
+
+#portm {
+  grid-area: portm;
+}
+
+#portn {
+  grid-area: portn;
+}
+
+#porto {
+  grid-area: porto;
+}
+
+.imgcontent {
+  margin: 10px;
+}
+
+.tile img {
+  width: 200px;
+}
+
+#contb {
+  padding: 20px;
 }
 
 .aside-title {
