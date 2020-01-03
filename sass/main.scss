@@ -23,7 +23,19 @@ section{
 }
 ///////////////////////////////////////////////header
 .title {
-	margin: 40px auto;
+	margin: 40px 50px;
+	animation-name: title;
+	animation-duration: 2s;
+    animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
+}
+@keyframes title {
+        0%   { transform: scale(1,1)      translateX(0); }
+        10%  { transform: scale(1,.9)   translateX(0); }
+        30%  { transform: scale(.9,1.1)   translateX(35px); }
+        50%  { transform: scale(1,.95) translateX(0); }
+        57%  { transform: scale(1,1)      translateX(7px); }
+        64%  { transform: scale(1,1)      translateX(0); }
+        100% { transform: scale(1,1)      translateX(0); }
 }
 
 .title h1 {
@@ -43,32 +55,51 @@ header .title h2 {
 	font-size:20px;
 	text-align: center-right;
 	margin: 0 auto;
-	text-decoration: underline solid #C0B283;
-	
-}
+	text-decoration: underline solid #C0B283;	
+	}
+
 /////////////////////////////////////header
 /////////////////////////////////////Navigation
+header nav{
+	width: 100%;
+}
 header nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #333;
 }
 header nav li {
-  float: left;
+	float: left;
+	margin: 0 40px;
 }
 
 header nav li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+	display: block;
+	color: white;
+	font-size: 14px;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;  
+	transition: transform 300ms ease-in, background-color 300ms ease-in;
+	&:hover {
+		background-color: #111;
+		color: #C0B283;
+		transform: scale(1.15);
+	}
+	
 }
-header nav li a:hover {
-  background-color: #111;
+.active {
+	transform: scale(1.15);
+
 }
+.active a{
+	background-color: #111;
+	color: #C0B283;	
+}
+
+
 /////////////////////////////////////////Navigation
 ////////////////////////////////////////MAIN GRID
 section{
@@ -88,10 +119,23 @@ list-style-type: none;
 #cat {
 	width: 175px;
 	height: 175px;
-	margin:55px 57px;
+	margin: 55px 57px;
 	border: 3px solid #C0B283;
 	border-radius: 50%;
+	animation-name: cat;
+	animation-duration: 2s;
+    animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
 }
+@keyframes cat {
+        0%   { transform: scale(1,1)      translateY(0); }
+        10%  { transform: scale(1.1,.9)   translateY(0); }
+        30%  { transform: scale(.9,1.1)   translateY(-35px); }
+        50%  { transform: scale(1.05,.95) translateY(0); }
+        57%  { transform: scale(1,1)      translateY(-7px); }
+        64%  { transform: scale(1,1)      translateY(0); }
+        100% { transform: scale(1,1)      translateY(0); }
+}
+
 #a {
 	grid-area:a;
 	
@@ -160,7 +204,7 @@ list-style-type: none;
 	margin: 10px 9px;
 }
 
-#a, #b {
+#b {
 	padding: 30px 40px;
 	background-color: #f4f4f4;
 }
