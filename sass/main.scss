@@ -147,6 +147,10 @@ list-style-type: none;
  grid-area: b;
 }
 
+#homeb {
+	grid-area:b;
+}
+
 #b {
 	grid-area:b;
 }
@@ -160,9 +164,9 @@ list-style-type: none;
 	color:#C0B283;
 	width: 540.33px;
 	margin: 4px 0px 0px -27px;
-	
 }
-#b img{	
+	
+.cvimg {	
 	border: 2px solid #C0B283;
 	margin: 0px 0px 0px 37px;
 }
@@ -233,6 +237,37 @@ list-style-type: none;
 
 /////////////////////////////////////ASIDE
 /////////////////////////////////MAIN GRID
+//////////////////////////////////IMAGE SLIDER
+#slideshow {
+	overflow: hidden;
+	height: 340px;
+	width: 600px;
+	margin: 0 auto;
+}
+
+.slide-wrapper {
+	width: 2400px;
+	-webkit-animation: slide 18s ease infinite;
+}
+
+.slide {
+	float: left;
+	height: 340px;
+	width: 600px;
+}
+@-webkit-keyframes slide {
+	0% 	{margin-left: 0px;}
+	15% {margin-left: 0px;}
+	25% {margin-left: -600px;}
+	40% {margin-left: -600px;}
+	50% {margin-left: -1200px;}
+	65% {margin-left: -1200px;}
+	80%	{margin-left: -1800px;}
+	95% {margin-left: -1800px;}
+}
+
+
+//////////////////////////////////IMAGE SLIDER
 ////////////////////////////////ABOUT
 #b{
 	padding: 30px 40px;
