@@ -1,8 +1,15 @@
+//////////////VARIABLES
+$primary-color: #DCD0C0;
+$secondary-color: #C0B283;
+$tertiary-color: #373737;
+$quadary-color: #F4F4F4;
+
+
 * {
   box-sizing: border-box;
   font-family: arial;
   font-size: 12px;
-  color: #373737
+  color: $tertiary-color
 }
 body {	
 	width: 960px;
@@ -36,7 +43,7 @@ section{
 		font-size:20px;
 		text-align: center-right;
 		margin: 0 auto;
-		text-decoration: underline solid #C0B283;	
+		text-decoration: underline solid $secondary-color;	
 	}
 }
 @keyframes title {
@@ -49,7 +56,7 @@ section{
         100% { transform: translateX(0); }
 }
 #h1span{
-	color:#C0B283;
+	color:$secondary-color;
 	font-size:40px;
 	text-align: center-right;
 	margin: 0 auto;
@@ -65,7 +72,7 @@ nav{
 		margin: 0;
 		padding: 0;
 		overflow: hidden;
-		background-color: #333;
+		background-color: $tertiary-color;
 		li {
 			float: left;
 			margin: 0 40px;
@@ -79,7 +86,7 @@ nav{
 				transition: transform 300ms ease-in, background-color 300ms ease-in;
 				&:hover {
 					background-color: #111;
-					color: #C0B283;
+					color: $secondary-color;
 					transform: scale(1.15);
 				}	
 			}
@@ -91,7 +98,7 @@ nav{
 	transform: scale(1.15);
 	a{
 		background-color: #111;
-		color: #C0B283;	
+		color: $secondary-color;	
 	}
 }
 /////////////////////////////////////////Navigation
@@ -115,7 +122,7 @@ list-style-type: none;
 	width: 175px;
 	height: 175px;
 	margin: 55px 57px;
-	border: 3px solid #C0B283;
+	border: 3px solid $secondary-color;
 	border-radius: 50%;
 	animation-name: cat;
 	animation-duration: 2s;
@@ -133,16 +140,18 @@ list-style-type: none;
 
 #a {
 	grid-area:a;
+	background-color: $quadary-color;
 }
 
 #homeb {
 	grid-area:b;
+	background-color: $quadary-color;
 }
 
 #b {
 	grid-area:b;	
 	padding: 30px 40px;
-	background-color: #f4f4f4;
+	background-color: $quadary-color;
 	display: grid;
 	grid-template-columns: 20% 20% 20% 20% 20%;
 	grid-template-areas: 
@@ -157,12 +166,12 @@ list-style-type: none;
 	". w w x x"
 	;
 	h3{
-		background-color: #373737;
+		background-color: $tertiary-color;
 		font-size:20px;
 		font-weight: 700;
 		text-align:center;
 		padding: 10px 0;
-		color:#C0B283;
+		color:$secondary-color;
 		width: 540.33px;
 		margin: 4px 0px 0px -27px;
 	}
@@ -176,18 +185,18 @@ list-style-type: none;
 }
 	
 .cvimg {	
-	border: 2px solid #C0B283;
+	border: 2px solid $secondary-color;
 	margin: 0px 0px 0px 37px;
 }
 ////////////////////////////////ASIDE
 #c {
-	background-color: #dcd0c0;
+	background-color: $primary-color;
 	grid-area:c;
 	height:250px;
 }
 #d {
 	grid-area:d;		
-	background-color: #dcd0c0;
+	background-color: $primary-color;
 	ul{
 		padding-inline-start:0;		
 		li{	
@@ -199,13 +208,13 @@ list-style-type: none;
 	}	
 }
 @keyframes aside {
-	0%   {color: #dcd0c0;}
-	100% {color: #373737;}
+	0%   {color: $primary-color;}
+	100% {color: $tertiary-color;}
 }
 
 #e {
 	grid-area:e;	
-	background-color: #dcd0c0;
+	background-color: $primary-color;
 	p {
 		padding: 10px 30px;
 		text-align:center;
@@ -216,7 +225,7 @@ list-style-type: none;
 
 #f {
 	grid-area:f;	
-	background-color: #dcd0c0;
+	background-color: $primary-color;
 	img {
 		margin: 10px 9px;
 		animation: wiggle 0.5s;
@@ -329,6 +338,7 @@ list-style-type: none;
 
 #portb {
 	grid-area: b;
+	background-color: $quadary-color;
 	display: grid;
 	grid-template-columns: 33.333% 33.333% 33.333%;
 	grid-template-areas: 
@@ -381,6 +391,7 @@ list-style-type: none;
 ///////////////////////////////////CONTACT
 #contb{
 	grid-area: b;
+	background-color: $quadary-color;
 	padding: 20px;
 }
 
@@ -392,10 +403,10 @@ list-style-type: none;
 
 /////////////////////////ASIDE
 .aside-title {
-	background-color: #373737;
+	background-color: $tertiary-color;
 	font-size:20px;
 	font-weight: 700;
-	color:#C0B283;
+	color:$secondary-color;
 	padding: 4px 0;
 	text-align: center;
 	width: 288px;
@@ -404,16 +415,16 @@ list-style-type: none;
 }
 ///////////////////////////FOOTER
 footer {
-	background-color: #373737;
+	background-color: $tertiary-color;
 	margin:0;
 	padding: 0;
 	p {
-		color: #C0B283;
+		color: $secondary-color;
 		margin:0;
 		padding: 0;
 	}
 	a {
-		color: #C0B283;
+		color: $secondary-color;
 	}
 } 
 footer 
@@ -447,7 +458,6 @@ footer
 	box-sizing: border-box;
 	border: 2px solid #ccc;
 	border-radius: 4px;
-	background-color: #f8f8f8;
 	resize: none;
 }
 
@@ -455,7 +465,7 @@ footer
 @media all and (max-width: 768px) {
 body {	
 	width:100%;
-	background-color:#f4f4f4;
+	background-color:$quadary-color;
 }
 
 section{
@@ -473,14 +483,14 @@ section{
 }
 #c {
 	max-width:175px;
-	background-color:#f4f4f4;
+	background-color:$quadary-color;
 }
 
 #cat {
 	width: 175px;
 	height: 175px;
 	margin:40px 10px;
-	border: 3px solid #C0B283;
+	border: 3px solid $secondary-color;
 	border-radius: 50%;
 }
 
