@@ -2,8 +2,12 @@
 $primary-color: #DCD0C0;
 $secondary-color: #C0B283;
 $tertiary-color: #373737;
-$quadary-color: #F4F4F4;
-
+$quaternary-color: #F4F4F4;
+@mixin mobile-only {
+    @media screen and (max-width: 768px){
+        @content;
+    }
+}
 
 * {
   box-sizing: border-box;
@@ -16,6 +20,10 @@ body {
 	height: auto;
 	margin: 0 auto;
 	font-size:14;
+	@include mobile-only{
+		width:100%;
+		background-color:$quaternary-color;		
+    }
 	
 }
 section{
@@ -23,27 +31,51 @@ section{
 	grid-template-columns: 30% 70%;
 	grid-template-areas: 
 	"c a"
+	"c nav"
 	"d b"
 	"e b"
 	"f b"
 	;
+	@include mobile-only{
+		width:100%;
+		display: grid;
+		grid-template-columns: 50%;
+		grid-template-areas: 		
+		"c a"
+		"nav nav"
+		"b b"
+		"e e"	
+		"f f"
+		"d d"
+		;	
+    }
 }
 ///////////////////////////////////////////////header
 .title {
+	grid-area:title;
 	margin: 40px 50px;
 	text-align: right;
 	animation-name: title;
 	animation-duration: 2s;
     animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);	
+	@include mobile-only{
+		margin: 80px auto;
+	}
 	h1 {
 		font-size:40px;
 		margin: 0 auto;
+		@include mobile-only {			
+			text-align: left;
+		}
 	}
 	h2 {
 		font-size:20px;
 		text-align: center-right;
 		margin: 0 auto;
-		text-decoration: underline solid $secondary-color;	
+		text-decoration: underline solid $secondary-color;
+		@include mobile-only {			
+			text-align: left;
+		}	
 	}
 }
 @keyframes title {
@@ -60,13 +92,18 @@ section{
 	font-size:40px;
 	text-align: center-right;
 	margin: 0 auto;
+	@include mobile-only {			
+		text-align: left;
+	}
 }
 
 /////////////////////////////////////header
 
 /////////////////////////////////////Navigation
 nav{
+	grid-area: nav;
 	width: 100%;
+	background-color:$quaternary-color;		
 	ul {
 		list-style-type: none;
 		margin: 0;
@@ -76,6 +113,9 @@ nav{
 		li {
 			float: left;
 			margin: 0 40px;
+			@include mobile-only{
+				margin: 0 5%;			
+			}
 			a {
 				display: block;
 				color: white;
@@ -104,16 +144,6 @@ nav{
 /////////////////////////////////////////Navigation
 
 ////////////////////////////////////////MAIN GRID
-section{
-	display: grid;
-	grid-template-columns: 30% 70%;
-	grid-template-areas: 
-	"c a"
-	"d b"
-	"e b"
-	"f b"
-	;
-}
 
 ul li {	
 list-style-type: none;
@@ -127,6 +157,11 @@ list-style-type: none;
 	animation-name: cat;
 	animation-duration: 2s;
     animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
+	@include mobile-only{
+		margin:40px 10px;
+		border: 3px solid $secondary-color;
+		border-radius: 50%;
+    }
 }
 @keyframes cat {
         0%   { transform: scale(1,1)      translateY(0); }
@@ -140,18 +175,23 @@ list-style-type: none;
 
 #a {
 	grid-area:a;
-	background-color: $quadary-color;
+	background-color: $quaternary-color;
+	@include mobile-only {
+		width:100%;
+		min-width: 300px;
+		padding: 10px 5px;
+	}
 }
 
 #homeb {
 	grid-area:b;
-	background-color: $quadary-color;
+	background-color: $quaternary-color;
 }
 
 #b {
 	grid-area:b;	
 	padding: 30px 40px;
-	background-color: $quadary-color;
+	background-color: $quaternary-color;
 	display: grid;
 	grid-template-columns: 20% 20% 20% 20% 20%;
 	grid-template-areas: 
@@ -165,6 +205,11 @@ list-style-type: none;
 	"u v v v v"
 	". w w x x"
 	;
+	@include mobile-only {
+		width:100%;
+		min-width: 300px;
+		padding: 10px 5px;
+	}
 	h3{
 		background-color: $tertiary-color;
 		font-size:20px;
@@ -174,6 +219,10 @@ list-style-type: none;
 		color:$secondary-color;
 		width: 540.33px;
 		margin: 4px 0px 0px -27px;
+		include mobile-only {
+			width: 100%;
+			margin: 4px 0px 0px 5px;
+		}
 	}
 	h5 {
 		margin-block-start: 0;
@@ -181,18 +230,44 @@ list-style-type: none;
 	}
 	li {
 		margin: 5px 0;
+		@include mobile-only{
+			margin: 5px 0px;
+			white-space: normal;
+			padding: 0 4px;
+		}
 	}
 }
 	
 .cvimg {	
 	border: 2px solid $secondary-color;
 	margin: 0px 0px 0px 37px;
+	@include mobile-only {
+		margin: 0px 0px 0px 20px;
+	}
 }
 ////////////////////////////////ASIDE
 #c {
 	background-color: $primary-color;
 	grid-area:c;
-	height:250px;
+	height:250px;	
+	@include mobile-only{	
+		max-width:175px;
+		background-color:$quaternary-color;
+    }
+}
+.aside-title {
+	background-color: $tertiary-color;
+	font-size:20px;
+	font-weight: 700;
+	color:$secondary-color;
+	padding: 4px 0;
+	text-align: center;
+	width: 288px;
+	height: 30px;
+	margin: 10px auto;
+	@include mobile-only {
+		width: 100%;
+	}
 }
 #d {
 	grid-area:d;		
@@ -204,6 +279,9 @@ list-style-type: none;
 			text-align:center;
 			animation-name: aside;
 			animation-duration: 2s;
+			@include mobile-only{
+				padding: 2px 30px;
+			}
 		}
 	}	
 }
@@ -220,6 +298,9 @@ list-style-type: none;
 		text-align:center;
 		animation-name: aside;
 		animation-duration: 2s;
+		@include mobile-only {
+			padding: 10px 60px;
+		}
 	}
 }
 
@@ -229,6 +310,10 @@ list-style-type: none;
 	img {
 		margin: 10px 9px;
 		animation: wiggle 0.5s;
+		@include mobile-only {
+			margin-left: 7%; 
+			margin-right: 7%;
+		}
 	}
 }
 @keyframes wiggle {
@@ -252,19 +337,32 @@ list-style-type: none;
 	height: 340px;
 	width: 600px;
 	margin: 0 auto;
+	@include mobile-only {
+		height: 283‬px;
+		width: 500px;
+	}
 }
 
 .slide-wrapper {
 	width: 2400px;
-	-webkit-animation: slide 18s ease infinite;
+	animation: slide 18s ease infinite;
+	@include mobile-only {
+		width: 2000px;
+		animation: mobile-slide 18s ease infinite;
+	}
+	
 }
 
 .slide {
 	float: left;
 	height: 340px;
 	width: 600px;
+	@include mobile-only {
+		height: 283‬px;
+		width: 500px;
+	}
 }
-@-webkit-keyframes slide {
+@keyframes slide {
 	0% 	{margin-left: 0px;}
 	15% {margin-left: 0px;}
 	25% {margin-left: -600px;}
@@ -275,6 +373,16 @@ list-style-type: none;
 	95% {margin-left: -1800px;}
 }
 
+@keyframes mobile-slide {
+	0% 	{margin-left: 0px;}
+	15% {margin-left: 0px;}
+	25% {margin-left: -500px;}
+	40% {margin-left: -500px;}
+	50% {margin-left: -1000px;}
+	65% {margin-left: -1000px;}
+	80%	{margin-left: -1500px;}
+	95% {margin-left: -1500px;}
+}
 
 //////////////////////////////////IMAGE SLIDER
 ////////////////////////////////ABOUT
@@ -338,14 +446,25 @@ list-style-type: none;
 
 #portb {
 	grid-area: b;
-	background-color: $quadary-color;
+	background-color: $quaternary-color;
 	display: grid;
-	grid-template-columns: 33.333% 33.333% 33.333%;
+	padding: 10px 3%;
+	grid-template-columns: 33.3333% 33.3333% 33.3333%;
 	grid-template-areas: 
 	"portg porth porti"
 	"portj portk portl"
 	"portm portn porto"
 	;
+	@include mobile-only {
+		grid-template-columns: 50% 50%;
+		grid-template-areas: 
+		"portg porth"
+		"porti portj" 
+		"portk portl"
+		"portm portn"
+		"porto ."
+		;
+	}
 }	
 #portg {
 	grid-area:portg;
@@ -377,58 +496,33 @@ list-style-type: none;
 .imgcontent {
 	padding: 10px;
 	border-radius: 10px;
-	transition: background-color 500ms, color 500ms;
+	color: $tertiary-color;
+	transition: background-color 500ms;	
 	&:hover{
-		background-color: blue;
-		color: white;
+		background-color: $primary-color;
+	}
+	a {
+		
+		text-decoration: none;
+	}
+	p {
+		font-size: 14px;
+		font-weight: 600;
+		text-align:center;
 	}
 }
 
-.tile img {
-	width: 200px;
-
+.tile{	
+	img {
+		width: 100%;
+	}
 }
 ///////////////////////////////////CONTACT
 #contb{
 	grid-area: b;
-	background-color: $quadary-color;
+	background-color: $quaternary-color;
 	padding: 20px;
 }
-
-
-
-
-///////////////////////////////////CONTACT
-
-
-/////////////////////////ASIDE
-.aside-title {
-	background-color: $tertiary-color;
-	font-size:20px;
-	font-weight: 700;
-	color:$secondary-color;
-	padding: 4px 0;
-	text-align: center;
-	width: 288px;
-	height: 30px;
-	margin: 10px auto;
-}
-///////////////////////////FOOTER
-footer {
-	background-color: $tertiary-color;
-	margin:0;
-	padding: 0;
-	p {
-		color: $secondary-color;
-		margin:0;
-		padding: 0;
-	}
-	a {
-		color: $secondary-color;
-	}
-} 
-footer 
-//////////////////////////////////FOOTER
 ///////////////////////CONTACT FORM
 .contact {
 	width: 100%;
@@ -461,94 +555,22 @@ footer
 	resize: none;
 }
 
-//////////////////////////////////////////MOBILE
-@media all and (max-width: 768px) {
-body {	
-	width:100%;
-	background-color:$quadary-color;
-}
-
-section{
-	width:100%;
-	display: grid;
-	grid-template-columns: 50%;
-	grid-template-areas: 
-	
-	"d d"
-	"e e"
-	"c a"
-	"b b"
-	"f f"
-;
-}
-#c {
-	max-width:175px;
-	background-color:$quadary-color;
-}
-
-#cat {
-	width: 175px;
-	height: 175px;
-	margin:40px 10px;
-	border: 3px solid $secondary-color;
-	border-radius: 50%;
-}
-
-.aside-title {
-	width: 100%;
-}
-#d ul li{	
-	padding: 2px 30px;
-}
-#e p {
-	padding: 10px 60px;
-}
-#a, #b {
-	width:100%;
-	min-width: 300px;
-	padding: 10px 5px;
-}
-header .title {
-	margin: 40px auto;
-}
-
-header .title h1 {
-	text-align: left;
-	
-}
-#h1span{
-	text-align: left;
-}
-
-header .title h2 {
-	text-align: left;
-	
-}
-#b h3{
-	width: 100%;
-	margin: 4px 0px 0px 5px;
-	
-}
-
-#b img{	
-	margin: 0px 0px 0px 20px;
-}
-
-#b li {
-	margin: 5px 0px;
-	white-space: normal;
-	padding: 0 4px;
-
-}
-
-#f img {
-	margin-left: 7%; 
-    margin-right: 7%;
-}
-
-footer{
-	width: 100%;
-}
-
-	
-}
+///////////////////////////////////CONTACT
+///////////////////////////FOOTER
+footer {
+	background-color: $tertiary-color;
+	margin:0;
+	padding: 0;
+	@include mobile-only {
+		width: 100%;
+	}
+	p {
+		color: $secondary-color;
+		margin:0;
+		padding: 0;
+	}
+	a {
+		color: $secondary-color;
+	}
+} 
+//////////////////////////////////FOOTER
