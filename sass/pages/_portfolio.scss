@@ -1,0 +1,73 @@
+#portb {
+	grid-area: b;
+	background-color: $quaternary-color;
+	display: grid;
+	padding: 10px 3%;
+	grid-template-columns: 33.3333% 33.3333% 33.3333%;
+	grid-template-areas: 
+	"portg porth porti"
+	"portj portk portl"
+	"portm portn porto"
+	;
+	@include mobile-only {
+		grid-template-columns: 50% 50%;
+		grid-template-areas: 
+		"portg porth"
+		"porti portj" 
+		"portk portl"
+		"portm portn"
+		"porto ."
+		;
+	}
+}	
+#portg {
+	grid-area:portg;
+}
+#porth {
+	grid-area:porth;
+}
+#porti {
+	grid-area:porti;
+}
+#portj {
+	grid-area:portj;
+}
+#portk {
+	grid-area:portk;
+}
+#portl {
+	grid-area:portl;
+}
+#portm {
+	grid-area:portm;
+}
+#portn {
+	grid-area:portn;
+}
+#porto {
+	grid-area:porto;
+}
+.imgcontent {
+	padding: 10px;
+	border-radius: 10px;
+	color: $tertiary-color;
+	transition: background-color 500ms;	
+	&:hover{
+		background-color: $primary-color;
+	}
+	a {
+		
+		text-decoration: none;
+	}
+	p {
+		font-size: 14px;
+		font-weight: 600;
+		text-align:center;
+	}
+}
+
+.tile{	
+	img {
+		width: 100%;
+	}
+}

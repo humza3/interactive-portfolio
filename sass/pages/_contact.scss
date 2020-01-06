@@ -1,0 +1,38 @@
+#contb{
+	grid-area: b;
+	background-color: $quaternary-color;
+	padding: 20px;
+}
+///////////////////////CONTACT FORM
+.contact {
+	width: 100%;
+}
+
+.form {
+    &__group {
+        & input {
+            border: 2px solid $secondary-color;
+            border-radius: 4px;
+            color: $tertiary-color;
+			padding: 12px 20px;
+            width: 100%;			
+            transition: border-color 500ms;
+            &:focus {
+                border: 2px solid $secondary-color;
+            }			
+            &:not(:focus):invalid {
+                border: 2px solid red;
+            }
+        }
+    }
+}
+#message {		
+	height: 150px;
+	border: 2px solid $secondary-color;
+	border-radius: 2px;
+	color: $tertiary-color;
+	padding: 12px 20px;
+	width: 100%;
+	border-radius: 4px;
+	resize: none;
+}

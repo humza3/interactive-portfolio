@@ -1,0 +1,40 @@
+nav{
+	grid-area: nav;
+	width: 100%;
+	background-color:$quaternary-color;		
+	ul {
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+		background-color: $tertiary-color;
+		li {
+			float: left;
+			margin: 0 40px;
+			@include mobile-only{
+				margin: 0 5%;			
+			}
+			a {
+				display: block;
+				color: white;
+				font-size: 14px;
+				text-align: center;
+				padding: 14px 16px;
+				text-decoration: none;  
+				transition: transform 300ms ease-in, background-color 300ms ease-in;
+				&:hover {
+					background-color: #111;
+					color: $secondary-color;
+					transform: scale(1.15);
+				}	
+			}
+		}
+	}	
+} 
+
+.active {
+	transform: scale(1.15);
+	a{
+		background-color: #111;
+		color: $secondary-color;	
+	}
+}

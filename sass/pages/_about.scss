@@ -1,0 +1,111 @@
+#aboutb {
+	grid-area:b;	
+	padding: 30px 40px;
+	background-color: $quaternary-color;
+	display: grid;
+	grid-template-columns: 20% 20% 20% 20% 20%;
+	grid-template-areas: 
+	"g h h h h"
+	"i j j j j"
+	"k l l l l"
+	"m n n n n"
+	"o p p p p"
+	"q r r r r"
+	"s t t t t"
+	"u v v v v"
+	". w w x x"
+	;
+	@include mobile-only {
+		width:100%;
+		min-width: 300px;
+		padding: 10px 5px;
+	}
+	h3{
+		background-color: $tertiary-color;
+		font-size:20px;
+		font-weight: 700;
+		text-align:center;
+		padding: 10px 0;
+		color:$secondary-color;
+		width: 540.33px;
+		margin: 4px 0px 0px -27px;
+		include mobile-only {
+			width: 100%;
+			margin: 4px 0px 0px 5px;
+		}
+	}
+	h5 {
+		margin-block-start: 0;
+		margin-block-end: 0;
+	}
+	li {
+		margin: 5px 0;
+		@include mobile-only{
+			margin: 5px 0px;
+			white-space: normal;
+			padding: 0 4px;
+		}
+	}
+}
+	
+.cvimg {	
+	border: 2px solid $secondary-color;
+	margin: 0px 0px 0px 37px;
+	@include mobile-only {
+		margin: 0px 0px 0px 20px;
+	}
+}
+#g {
+	grid-area:g;
+}
+#h {
+	grid-area:h;
+}
+#i {
+	grid-area:i;
+}
+#j {
+	grid-area:j;
+}
+#k {
+	grid-area:k;
+}
+#l {
+	grid-area:l;
+}
+#m {
+	grid-area:m;
+}
+#n {
+	grid-area:n;
+}
+#o {
+	grid-area:o;
+}
+#p {
+	grid-area:p;
+}
+#q {
+	grid-area:q;
+}
+#r {
+	grid-area:r;
+}
+#s {
+	grid-area:s;
+}
+#t {
+	grid-area:t;
+}
+#u {
+	grid-area:u;
+}
+#v {
+	grid-area:v;
+}
+#w {
+	grid-area:w;
+}
+#x {
+	grid-area:x;
+}

@@ -1,0 +1,45 @@
+.title {
+	grid-area:title;
+	margin: 40px 50px;
+	text-align: right;
+	animation-name: title;
+	animation-duration: 2s;
+    animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);	
+	@include mobile-only{
+		margin: 80px auto;
+	}
+	h1 {
+		font-size:40px;
+		margin: 0 auto;
+		@include mobile-only {			
+			text-align: left;
+		}
+	}
+	h2 {
+		font-size:20px;
+		text-align: center-right;
+		margin: 0 auto;
+		text-decoration: underline solid $secondary-color;
+		@include mobile-only {			
+			text-align: left;
+		}	
+	}
+}
+@keyframes title {
+        0%   { transform: translateX(0); }
+        10%  { transform: translateX(0); }
+        30%  { transform: translateX(-35px); }
+        50%  { transform: translateX(0); }
+        57%  { transform: translateX(-7px); }
+        64%  { transform: translateX(0); }
+        100% { transform: translateX(0); }
+}
+#h1span{
+	color:$secondary-color;
+	font-size:40px;
+	text-align: center-right;
+	margin: 0 auto;
+	@include mobile-only {			
+		text-align: left;
+	}
+}

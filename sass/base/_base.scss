@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+  font-family: arial;
+  font-size: 12px;
+  color: $tertiary-color;
+  list-style-type: none;
+}
+
+body {	
+	width: 960px;
+	height: auto;
+	margin: 0 auto;
+	font-size:14;
+	@include mobile-only{
+		width:100%;
+		background-color:$quaternary-color;		
+    }
+	
+}
+section{
+	display: grid;
+	grid-template-columns: 30% 70%;
+	grid-template-areas: 
+	"c a"
+	"c nav"
+	"d b"
+	"e b"
+	"f b"
+	;
+	@include mobile-only{
+		width:100%;
+		display: grid;
+		grid-template-columns: 50%;
+		grid-template-areas: 		
+		"c a"
+		"nav nav"
+		"b b"
+		"e e"	
+		"f f"
+		"d d"
+		;	
+    }
+}
