@@ -15,14 +15,14 @@ nav{
 			}
 			a {
 				display: block;
-				color: white;
+				color: $quaternary-color;
 				font-size: 14px;
 				text-align: center;
 				padding: 14px 16px;
 				text-decoration: none;  
 				transition: transform 300ms ease-in, background-color 300ms ease-in;
 				&:hover {
-					background-color: #111;
+					@include darken;
 					color: $secondary-color;
 					transform: scale(1.15);
 				}	
@@ -34,7 +34,7 @@ nav{
 .active {
 	transform: scale(1.15);
 	a{
-		background-color: #111;
+		@include darken;
 		color: $secondary-color;	
 	}
 }

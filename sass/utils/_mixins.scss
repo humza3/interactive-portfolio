@@ -3,3 +3,8 @@
         @content;
     }
 }
+
+@mixin darken {
+	background-color: darken($tertiary-color, 10%);
+}
+
